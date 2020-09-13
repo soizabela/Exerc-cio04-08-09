@@ -1,0 +1,94 @@
+using System;
+
+public class Pessoa 
+{
+
+  private string nome;
+  private int idade;
+  private double peso;
+  private double altura;
+
+  public string getNome()
+  {
+    return nome;
+  }
+
+  public void setNome(string novoNome)
+  {
+    nome = novoNome;
+  }
+  
+  public int getIdade()
+  {
+    return idade;
+  }
+
+  public void setIdade(int novaIdade)
+  {
+    idade = novaIdade;
+  }
+
+  public double getPeso()
+  {
+    return peso;
+  }
+
+  public void setPeso(double novoPeso)
+  {
+    peso = novoPeso;
+  }
+
+  public double getAltura()
+  {
+    return altura;
+  }
+
+  public void setAltura(double novaAltura)
+  {
+    altura = novaAltura;
+  }
+
+  public void envelhercer()
+  {
+    idade++;
+    if(idade < 21)
+    {
+      crescer(0.05);
+    }
+  }
+
+  public void engordar(double novoPeso)
+  {
+    peso += novoPeso;
+  }
+
+  public void emagrecer(double novoPeso)
+  {
+    peso -= novoPeso;
+  }
+
+  public void crescer(double somaAltura)
+  {
+    altura += somaAltura;
+  }
+
+
+
+  static void Main()
+  {
+      var pessoa = new Pessoa();
+      pessoa.setNome("Laura");
+      pessoa.setIdade(19);
+      pessoa.setAltura(1.7);
+      pessoa.setPeso(65.0);
+      pessoa.envelhercer();
+      pessoa.engordar(1.2);
+      pessoa.emagrecer(0.5);
+      
+      Console.WriteLine("Nome: {0}", pessoa.nome);
+      Console.WriteLine("Idade: {0}", pessoa.idade);
+      Console.WriteLine("Peso: {0}", pessoa.peso);
+      Console.WriteLine("Altura: {0}", pessoa.altura);
+  }
+
+}
